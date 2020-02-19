@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <style>
+        body {
+            background-color: aquamarine;
+            color: #fff;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1 {
+            font-size: 40px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            /* letter-spacing: 2px; */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+    <h1>Welcome to profile of the <%= person %>.</h1>
+    <table border="1" rules='all' width="100%">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Job</th>
+        </tr>
+        <% data.forEach((key)=>{ %>
+            <tr>
+                <td><%= key.name %></td>
+                <td><%= key.age %></td>
+                <td><%= key.job %></td>
+            </tr> 
+        <% }) %>
+    </table>
+</body>
+</html>
